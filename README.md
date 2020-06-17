@@ -20,7 +20,7 @@ To run the main scripte "train_parallel.py", one should first use `ifconfig -a` 
 Then, you can train a Semi-supervised Federated Learning experiment using the following command:
 
 ```
-python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]`
+python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]
 optional arguments:
 --experiment_num      experiment number, each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting_cifar/svhn/emnist.py, e.g., --experiment_num 0   
 --GPU_list            GPUs used for training, e.g., --GPU_list 0123456789   
