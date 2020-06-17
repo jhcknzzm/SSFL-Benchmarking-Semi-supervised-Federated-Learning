@@ -15,7 +15,9 @@ After cloning, please use Anaconda to install all the dependencies:
 To run the main scripte "train_parallel.py", one should first use `ifconfig -a` to find the ip address of the machine.
 Then, you can train a Semi-supervised Federated Learning experiment using the following command:
 
-`python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]`
-`optional arguments:`
-`--experiment_num      experiment number, each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting.py`
+```
+python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]`
+optional arguments:
+--experiment_num      experiment number, each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting.py
+```
 
