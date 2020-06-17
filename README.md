@@ -24,12 +24,21 @@ optional arguments:
 --datasetid           the id of the datasets, datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment. 
 ```
 Following is the default experiment setting of Cifar-10:
-Experiment num|  K |  Ck |  T |  Ns | R | Batch size| Average method | Neural network model
+Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method | Neural network model
 --- | --- | --- | --- | --- | --- | --- | --- | ---
-0 |  10 | 10  | 16  | 1000  | 1.0 | 64 | FedAvg | ResNet-18 with group normalization
+0 |  10 | 10  | 16  | 1000  | 1.0 | 64 | 300 | FedAvg | ResNet-18 with group normalization
+1 |  10 | 10  | 16  | 1000  | 0.0 | 64 | 300 | FedAvg | ResNet-18 with group normalization
+2 |  10 | 10  | 16  | 1000  | 0.2 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+3 |  10 | 10  | 16  | 1000  | 0.4 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+4 |  10 | 10  | 16  | 1000  | 0.6 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+5 |  10 | 10  | 16  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+6 |  10 | 10  | 2  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+7 |  10 | 10  | 4  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+8 |  10 | 10  | 8  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+9 |  10 | 10  | 32  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
 
-* K    User number
-* Ck   The number of communication users
-* T    Communication period
-* Ns   The number of labeled samples in server
-* R    The non-iidness
+* K:    User number
+* Ck:   The number of communication users
+* T:    Communication period
+* Ns:   The number of labeled samples in server
+* R:    The non-iidness
