@@ -23,7 +23,7 @@ optional arguments:
 --ip_address          the ip address of the machine, e.g., --ip_address 128.32.162.169
 --datasetid           the id of the datasets, datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment. 
 ```
-Following is the default experiment setting of Cifar-10:
+Following is the default experiment setting of Cifar-10 (datasetid is 0):
 Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method | Neural network model
 --- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 0 |  10 | 10  | 16  | 1000  | 1.0 | 64 | 300 | FedAvg | ResNet-18 with group normalization
@@ -36,3 +36,8 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method |
 * T:    Communication period
 * Ns:   The number of labeled samples in server
 * R:    The non-iidness
+
+One can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
+`
+python train_parallel.py --experiment_num 0  --GPU_list 0123467895 --ip_address 128.32.162.169 --datasetid 0
+`
