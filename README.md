@@ -37,7 +37,7 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method H
 
 * K:    User number
 * Ck:   The number of communication users
-* T:    Communication period
+* T:    Communication period, T ∈ {2,4,8,16,32}
 * Ns:   The number of labeled samples in server
 * R:    The non-iidness
 * H:    Average method, H=0/1 means the FedAvg/Grouping-based average method is used
