@@ -24,7 +24,7 @@ optional arguments:
 --datasetid           the id of the datasets, datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment. 
 ```
 Following is the default experiment setting of Cifar-10:
-
-  experiment_num| User number K | The number of communication users Ck | Communication period T | The number of labeled samples in server Ns
+| User number K | The number of communication users Ck | Communication period T | The number of labeled samples in server Ns
   --- | --- | --- | --- | --- 
     0 |  10 | 10  | 16  | 1000
+
