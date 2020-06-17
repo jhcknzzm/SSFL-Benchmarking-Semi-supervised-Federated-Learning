@@ -17,7 +17,15 @@ Then, you can train a Semi-supervised Federated Learning experiment using the fo
 
 ```
 python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]`
+
 optional arguments:
---experiment_num      experiment number, each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting.py
+
+--experiment_num      experiment number, each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting.py, e.g., --experiment_num 0   
+
+--GPU_list            GPUs used for training, e.g., --GPU_list 0123456789   
+
+--ip_address          the ip address of the machine, e.g., --ip_address 128.32.162.169
+
+--datasetid           the id of datasets, datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST is used in the experiment. 
 ```
 
