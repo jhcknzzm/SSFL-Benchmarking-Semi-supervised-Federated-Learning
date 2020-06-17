@@ -25,7 +25,7 @@ optional arguments:
 ```
 Following is the default experiment setting of Cifar-10:
 Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method | Neural network model
---- | --- | --- | --- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | --- | --- | --- | --- | --- | ---
 0 |  10 | 10  | 16  | 1000  | 1.0 | 64 | 300 | FedAvg | ResNet-18 with group normalization
 1 |  10 | 10  | 16  | 1000  | 0.0 | 64 | 300 | FedAvg | ResNet-18 with group normalization
 2 |  10 | 10  | 16  | 1000  | 0.2 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
