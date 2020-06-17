@@ -155,20 +155,19 @@ if dataset == "cifar10":
 if dataset == 'emnist':
     size_list = [47]
     iid_list = [0,1]
-    basicLabelRatio_list = [0.2, 0.4, 0.6, 0.8, 1.0]
+    basicLabelRatio_list = [0.4]
 
     num_data_server_list = [4700]#[3100,6200]
     class_per_device = 1
 
 if dataset == 'svhn':
-    size_list = [30]
-    iid_list = [0]
-    basicLabelRatio_list = [0.4]
+    size_list = [10, 20, 30]
+    iid_list = [0,1]
+    basicLabelRatio_list = [0.2, 0.4, 0.6, 0.8, 1.0]
 
     num_data_server_list = [1000]
     class_per_device = 1
 # Data pre-processing
-num_data_server_list = [1000]
 for num_data_server in num_data_server_list:
     for iid in iid_list:
         for size in size_list:
