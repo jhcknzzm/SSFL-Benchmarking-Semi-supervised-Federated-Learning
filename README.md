@@ -25,6 +25,6 @@ optional arguments:
 ```
 Following is the default experiment setting of Cifar-10:
 Experiment num| User number K | The number of communication users Ck | Communication period T | The number of labeled samples in server Ns
-  --- | --- | --- | --- | --- 
-    0 |  10 | 10  | 16  | 1000
+--- | --- | --- | --- | --- 
+0 |  10 | 10  | 16  | 1000
 
