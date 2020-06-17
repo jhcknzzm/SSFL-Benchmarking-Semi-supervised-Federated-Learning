@@ -47,7 +47,7 @@ If the ip address is 128.32.162.169, one can use the following command to run th
 ```
 python train_parallel.py --experiment_num 0  --GPU_list 0123467895 --ip_address 128.32.162.169 --datasetid 0
 ```
-You can also run the following scripts to reproduce the results reported in Table 2 of the paper:
+You can also run the following scripts to reproduce the results reported in Table 2 of the paper.
 
 ```
 nohup bash Exper_GroupingMethod.sh
