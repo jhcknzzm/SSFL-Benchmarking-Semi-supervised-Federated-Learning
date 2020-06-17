@@ -24,9 +24,9 @@ optional arguments:
 --datasetid           the id of the datasets, datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment. 
 ```
 Following is the default experiment setting of Cifar-10:
-Experiment num|  K |  Ck |  T |  Ns | R | Neural network model
---- | --- | --- | --- | --- | --- | ---
-0 |  10 | 10  | 16  | 1000  | 1.0 | ResNet-18 with GN
+Experiment num|  K |  Ck |  T |  Ns | R | Average method | Neural network model
+--- | --- | --- | --- | --- | --- | --- | ---
+0 |  10 | 10  | 16  | 1000  | 1.0 | FedAvg | ResNet-18 with group normalization
 
 K User number
 Ck The number of communication users
