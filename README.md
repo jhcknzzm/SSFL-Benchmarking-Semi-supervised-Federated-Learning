@@ -6,11 +6,15 @@ This repository includes all necessary programs to implement the Semi-supervised
 ## Usage
 Please first clone the this library to your local system:
 
-`git clone https://github.com/jhcknzzm/SSFL-Benchmarking-Semi-supervised-Federated-Learning.git` 
+```
+git clone https://github.com/jhcknzzm/SSFL-Benchmarking-Semi-supervised-Federated-Learning.git
+```
 
 After cloning, please use Anaconda to install all the dependencies:
 
-`conda env create -f environment.yml` 
+```
+conda env create -f environment.yml
+```
 
 To run the main scripte "train_parallel.py", one should first use `ifconfig -a` to find the ip address of the machine.
 Then, you can train a Semi-supervised Federated Learning experiment using the following command:
@@ -40,11 +44,11 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method H
 
 If the ip address is 128.32.162.169, one can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
 
-`
+```
 python train_parallel.py --experiment_num 0  --GPU_list 0123467895 --ip_address 128.32.162.169 --datasetid 0
-`
+```
 You can also run the following scripts to reproduce the results reported in Table 2 of the paper:
 
-`
+```
 nohup bash Exper_GroupingMethod.sh
-`
+```
