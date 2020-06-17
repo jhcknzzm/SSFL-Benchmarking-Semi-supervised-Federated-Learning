@@ -36,7 +36,7 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method |
 7 |  10 | 10  | 4  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
 8 |  10 | 10  | 8  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
 9 |  10 | 10  | 32  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
-... | ... | 10  | 32  | 1000  | 0.8 | 64 | 300 |  FedAvg | ResNet-18 with group normalization
+... | ... | ...   | ...   | ...   | ...  | ...  | ...  |  ...  | ... 
 
 * K:    User number
 * Ck:   The number of communication users
