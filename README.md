@@ -42,7 +42,7 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method H
 * R:    The non-iidness
 * H:    Average method, H=0/1 means the FedAvg/Grouping-based average method is used
 
-If the ip address is 128.32.162.169, one can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
+Assume the ip address is 128.32.162.169, one can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
 
 ```
 python train_parallel.py --experiment_num 0  --GPU_list 0123467895 --ip_address 128.32.162.169 --datasetid 0
