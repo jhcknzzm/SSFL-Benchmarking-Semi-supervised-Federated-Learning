@@ -39,7 +39,7 @@ Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method H
 * Ck:   The number of communication users
 * T:    Communication period, T ∈ {2,4,8,16,32}
 * Ns:   The number of labeled samples in server
-* R:    The non-iidness
+* R:    The non-iidness, R ∈ {0,0.2,0.4,0.6,0.8,1.0}
 * H:    Average method, H=0/1 means the FedAvg/Grouping-based average method is used
 
 Assume the ip address is 128.32.162.169, one can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
