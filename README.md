@@ -2,7 +2,7 @@
 Benchmarking Semi-supervised Federated Learning
 ## Introduction
 This repository includes all necessary programs to implement Semi-supervised Federated Learning of the following paper. The code runs on Python 3.7.6 with PyTorch 1.0.0 and torchvision 0.2.2. We appreciate it if you would please cite the following paper if you found the repository useful for your work:
-* Z. Zhang, Z. Yao, Y. Yang, Y. Yan, J. E. Gonzalez, and M. W. Mahoney, “Benchmarking semi-supervised federated learning,” in NeurIPS 2020, under review.
+* Z. Zhang, Z. Yao, Y. Yang, Y. Yan, J. E. Gonzalez, and M. W. Mahoney, “Benchmarking semi-supervised federated learning”.
 ## Usage
 Please first clone the this library to your local system:
 
