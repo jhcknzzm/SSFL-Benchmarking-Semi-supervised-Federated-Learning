@@ -1,7 +1,7 @@
 # SSFL-Benchmarking-Semi-supervised-Federated-Learning
 Benchmarking Semi-supervised Federated Learning
 ## Introduction
-This repository includes all necessary programs to implement Semi-supervised Federated Learning of [the following paper]( https://drive.google.com/file/d/1rGzMl0QMgwmnEcn5599-UrgF0Zz-1Jy1/view?usp=sharing). The code runs on Python 3.7.6 with PyTorch 1.0.0 and torchvision 0.2.2. We appreciate it if you would please cite the following paper if you found the repository useful for your work:
+This repository includes all necessary programs to implement Semi-supervised Federated Learning of [the following paper](https://arxiv.org/abs/2008.11364). The code runs on Python 3.7.6 with PyTorch 1.0.0 and torchvision 0.2.2. We appreciate it if you would please cite the following paper if you found the repository useful for your work:
 * [Z. Zhang, Z. Yao, Y. Yang, Y. Yan, J. E. Gonzalez, and M. W. Mahoney, “Benchmarking semi-supervised federated learning”.](https://arxiv.org/abs/2008.11364)
 ## Usage
 Please first clone the this library to your local system:
