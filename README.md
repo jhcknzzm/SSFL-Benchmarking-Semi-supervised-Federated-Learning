@@ -65,7 +65,7 @@ When all gradient diversities are calculated, you can run the following script t
 python Plot_grad_diversity.py
 ```
 
-You can also run the following scripts to reproduce the results reported in Table 2 of [the paper](https://arxiv.org/abs/2008.11364).
+You can also run the following scripts to reproduce the results reported in [the paper](https://arxiv.org/abs/2008.11364).
 
 ```
 nohup bash Run_Exper.sh
