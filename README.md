@@ -1,8 +1,8 @@
-# SSFL-Benchmarking-Semi-supervised-Federated-Learning
-Benchmarking Semi-supervised Federated Learning
+# SSFL-Semi-supervised-Federated-Learning: Improving Semi-supervised Federated Learning by Reducing the Gradient Diversity of Models
+Improving Semi-supervised Federated Learning by Reducing the Gradient Diversity of Models
 ## Introduction
 This repository includes all necessary programs to implement Semi-supervised Federated Learning of [the following paper](https://arxiv.org/abs/2008.11364). The code runs on Python 3.7.6 with PyTorch 1.0.0 and torchvision 0.2.2. We appreciate it if you would please cite the following paper if you found the repository useful for your work:
-* [Z. Zhang, Z. Yao, Y. Yang, Y. Yan, J. E. Gonzalez, and M. W. Mahoney, “Benchmarking semi-supervised federated learning”.](https://arxiv.org/abs/2008.11364)
+* [Z. Zhang, Z. Yao, Y. Yang, Y. Yan, J. E. Gonzalez, and M. W. Mahoney, “Improving Semi-supervised Federated Learning by Reducing the Gradient Diversity of Models”.](https://arxiv.org/abs/2008.11364)
 ## Usage
 Please first clone the this library to your local system:
 
@@ -16,39 +16,58 @@ After cloning, please use Anaconda to install all the dependencies:
 conda env create -f environment.yml
 ```
 
-To run the main scripte "train_parallel.py", one should first use `ifconfig -a` to find the ip address of the machine.
+To run the main scripte "train_parallel.py", one needs to determine number of available GPUs.
+For example, the number of GPUs on your machine is 4, you need to specify GPU_list as 0123 in run_cifar10.sh, run_svhn.sh and run_emnist.sh.
+
 Then, you can train a Semi-supervised Federated Learning experiment using the following command:
 
 ```
-python train_parallel.py [--experiment_num]  [--GPU_list] [--ip_address] [--datasetid]
+python train_parallel.py  [--GPU_list] [--datasetid] [--size] [--basicLabelRatio] [--labeled] [--num_comm_ue] [--H] [--cp] [--eval_grad] [--experiment_folder] [--experiment_name] [--tao] [--model] --[ue_loss] [--user_semi]
+                          [--epoch] [--batch_size] [--fast] [--Ns]
 optional arguments:
---experiment_num      experiment number (default: 0), each experiment number corresponds to a specific experiment setting, you can modify these settings by modifying setting_cifar/svhn/emnist.py 
---GPU_list            GPUs used for training, e.g., --GPU_list 0123456789   
---ip_address          the ip address of the machine, e.g., --ip_address 128.32.162.169
---datasetid           the id of the datasets (default: 0), datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment. 
+--GPU_list:            GPUs used for training, e.g., --GPU_list 0123456789
+--datasetid:           the id of the datasets (default: 0), datasetid = 0/1/2 means the Cifar-10/SVHN/EMNIST dataset is used in the experiment.
+--size:              size = K (users) + 1 (server);
+--cp:                cp in {2, 4, 8, 16} is frequency of communication; cp = 2 means UEs and server communicates every 2 iterations;
+--basicLabelRatio:   basicLabelRatio in {0.1, 0.2, 0.4, ..., 1.0},  is the degree of data dispersion for each UE,
+                   basicLabelRatio = 0.0 means UE has the same amount of samples in each class; basicLabelRatio = 1.0 means all samples owned
+                   by UE belong to the same class;
+--model:             model in {'res', 'res_gn', 'EMNIST_model'}; model = 'res' means we use ResNet18 + BN; model = 'res_gn' means we use ResNet18 + GN, EMNIST_model are used to train SSFL models on EMNIST dataset;
+--num_comm_ue:       num_comm_ue in {1, 2, ..., K}; communication user number per iteration;
+--H:                 H in {0, 1}; use grouping-based method or not; H = 1 means we use grouping-based method; H = 0 means we use FedAvg method;
+--Ns:   num_data_server in {1000, 4000}, number of labeled samples in server;
+--labeled: labeled in {0, 1}, labeled=1 means supervised FL, labeled=0 means semi-supervised FL;
+--cp: cp in {2,4,8,16,32,64} is communication period between the users and the server
+--eval_grad:  eval_grad in  {0, 1}, eval_grad=1 means that we load the model stored during training to calculate the gradient;
+--experiment_folder: storage directory of experiment checkpoints;
+--experiment_name: the name of current experiment;
+--tao: Hyperparameters used to calculate CRL;
+--model: Neural network model for training;
+--ue_loss: ue_loss=CRL means we use CRL as the loss for local training; ue_loss=SF means we use self-training method for local training;
+--epoch: training epoches of SSFL;
+--batch_size: batch size used for training;
+--fast: Hyperparameters used for learning rate update;
+--Ns: The number of labeled data in the server.
 ```
-Following is the default experiment setting of Cifar-10 (datasetid is 0):
-Experiment num|  K |  Ck |  T |  Ns | R | Batch size | Epochs | Average method H | Neural network model
---- | --- | --- | --- | --- | --- | --- | --- | --- | ---
-0 |  10 | 10  | 16  | 1000  | 1.0 | 64 | 300 | 0 | ResNet-18 with group normalization
-1 |  10 | 10  | 16  | 1000  | 0.0 | 64 | 300 | 0 | ResNet-18 with group normalization
-2 |  10 | 10  | 16  | 1000  | 0.2 | 64 | 300 |  0 | ResNet-18 with group normalization
-... | ... | ...   | ...   | ...   | ...  | ...  | ...  |  ...  | ... 
-
-* K:    User number
-* Ck:   The number of communication users
-* T:    Communication period, T ∈ {2,4,8,16,32}
-* Ns:   The number of labeled samples in server
-* R:    The non-iidness, R ∈ {0,0.2,0.4,0.6,0.8,1.0}
-* H:    Average method, H=0/1 means the FedAvg/Grouping-based average method is used
-
-Assume the ip address is 128.32.162.169, one can use the following command to run the experiment in the setting of K=10, Ck=10, R=1.0, T=16 and Ns=1000 on Cifar-10:
-
+For example, you can also run the following script to reproduce the results of SSFL on Cifar10 in the setting of K=C=10, Ns=1000, model=res_gn with the non-iidness 0.4 and the grouping-based method.
 ```
-python train_parallel.py --experiment_num 0  --GPU_list 0123467895 --ip_address 128.32.162.169 --datasetid 0
+python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 10 --size 11 --epoch 300 --eval_grad 0 --model res_gn --basicLabelRatio 0.4 --experiment_name Cifar10_res_gn_H1_comUE10_R0.4_SSFL
 ```
+
+The results will be saved in the folder results_v0, and the checkpoints will be save in "/checkpoints/Cifar10_res_gn_H1_comUE10_R0.4_SSFL"
+
+When all the checkpoints are saved, you can run the following script to calculate gradient diversity to reproduce the results on gradient diversity of our paper:
+```
+nohup bash Grad_Diff.sh
+```
+When all gradient diversities are calculated, you can run the following script to plot the results of gradient diversity.
+```
+python Plot_grad_diversity.py
+```
+
 You can also run the following scripts to reproduce the results reported in Table 2 of [the paper](https://arxiv.org/abs/2008.11364).
 
 ```
-nohup bash Exper_GroupingMethod.sh
+nohup bash Run_Exper.sh
 ```
+
