@@ -1,3 +1,7 @@
+# code in this file is adpated from
+# https://github.com/ildoonet/pytorch-randaugment/blob/master/RandAugment/augmentations.py
+# https://github.com/google-research/fixmatch/blob/master/third_party/auto_augment/augmentations.py
+# https://github.com/google-research/fixmatch/blob/master/libml/ctaugment.py
 import logging
 import random
 
@@ -49,10 +53,11 @@ def CutoutAbs(img, v, **kwarg):
     x1 = int(min(w, x0 + v))
     y1 = int(min(h, y0 + v))
     xy = (x0, y0, x1, y1)
-
+    # gray
     color = (127, 127, 127)
     img = img.copy()
-
+    # print(img.size)
+    # print(type(img))
     if w == 32:
         PIL.ImageDraw.Draw(img).rectangle(xy, color)
     else:
@@ -226,5 +231,5 @@ class RandAugmentMC(object):
         if w == 32:
             img = CutoutAbs(img, 16)
         else:
-            img = CutoutAbs(img, 7)
+            img = CutoutAbs(img, 14)
         return img
