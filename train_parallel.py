@@ -96,6 +96,11 @@ parser.add_argument('--batch_size',
                     type=int,
                     help='batch_size for training')
 
+parser.add_argument('--k_img',
+                    default=65536,
+                    type=int,
+                    help='k_img')
+
 parser.add_argument('--fast',
                     default=1,
                     type=int,
@@ -238,7 +243,7 @@ else:
     iid = 0
 
 num_comm_ue = args.num_comm_ue
-k_img = 65536
+k_img = args.k_img
 epoches = args.epoch
 warmup_epoch = 5
 num_data_server = args.Ns
@@ -276,10 +281,12 @@ for model in model_list:
             BASH_COMMAND_LIST = []
             for rank in range(num_rank):
                 lr = 0.03*(10.0+1.0)*batch_size/128.0
+                if args.model == 'res9':
+                    lr = 0.003*num_comm_ue*batch_size/128.0
                 if dataset == 'emnist' or args.ue_loss == 'SF':
                     lr = 0.03
                     warmup_epoch = 0
-                if args.user_semi:
+                if args.user_semi and args.model != 'res9':
                     lr = 0.01
                     warmup_epoch = 0
 

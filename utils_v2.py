@@ -1696,6 +1696,18 @@ def Get_num_ranks_all_size_num_devices(args):
             size_all = size + H*2
         num_devices = size - 1
 
+    if dataset == 'cifar10' and num_comm_ue == 5:
+        if args.user_semi:
+            num_rank = num_comm_ue
+            size_all = size
+            num_devices = size
+        else:
+            num_rank = num_comm_ue + 1 + H
+            size_all = size + H
+            num_devices = size - 1
+
+
+
     return num_rank, size_all, num_devices
 
 

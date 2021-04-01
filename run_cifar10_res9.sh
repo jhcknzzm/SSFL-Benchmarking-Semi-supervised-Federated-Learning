@@ -1,0 +1,4 @@
+nohup python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 5 --size 101 --epoch 200 --basicLabelRatio 0.0 --cp 5 --k_img 1000 --Ns 5000 --eval_grad 0 --model res9 --experiment_name Cifar10_res9_H1_comUE5_R0.0_SSFL
+nohup python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 5 --size 100  --user_semi 1 --epoch 200 --basicLabelRatio 0.0 --cp 5 --k_img 1000 --Ns 5000 --eval_grad 0 --model res9 --experiment_name Cifar10_res9_H1_comUE5_R0.0_SSFL_user_semi
+nohup python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 5 --size 101 --epoch 200 --basicLabelRatio 1.0 --cp 5 --k_img 1000 --Ns 5000 --eval_grad 0 --model res9 --experiment_name Cifar10_res9_H1_comUE5_R1.0_SSFL
+nohup python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 5 --size 100  --user_semi 1 --epoch 200 --basicLabelRatio 1.0 --cp 5 --k_img 1000 --Ns 5000 --eval_grad 0 --model res9 --experiment_name Cifar10_res9_H1_comUE5_R1.0_SSFL_user_semi
