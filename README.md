@@ -54,6 +54,12 @@ For example, you can also run the following script to reproduce the results of S
 python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 10 --size 11 --epoch 300 --eval_grad 0 --model res_gn --basicLabelRatio 0.4 --experiment_name Cifar10_res_gn_H1_comUE10_R0.4_SSFL
 ```
 
+In the above experiment, the default model is ResNet18. One can use the following command to change the model and perform the comparative experiments of Table 3 in section 4.3 in [the paper](https://arxiv.org/abs/2008.11364).
+```
+nohup bash run_cifar10_res9.sh
+```
+
+
 The results will be saved in the folder results_v0, and the checkpoints will be save in "/checkpoints/Cifar10_res_gn_H1_comUE10_R0.4_SSFL"
 
 When all the checkpoints are saved, you can run the following script to calculate gradient diversity to reproduce the results on gradient diversity of our paper:
