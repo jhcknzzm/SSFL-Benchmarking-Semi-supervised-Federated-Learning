@@ -58,7 +58,7 @@ In the above experiment, the default model is ResNet18. One can use the followin
 ```
 python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 10  --model res9 --size 11 --epoch 300 --eval_grad 0 --model res_gn --basicLabelRatio 0.4 --experiment_name Cifar10_res_gn_H1_comUE10_R0.4_SSFL
 ```
-One also can perform the comparative experiments (use ResNet9 as the default model) of Table 3 in section 4.3 in [the paper](https://arxiv.org/abs/2008.11364).
+One can also perform the experiments on ResNet9 to compare with another paper on federated semi-supervised learning. See Table 3 in section 4.3 in our paper for more details.
 ```
 nohup bash run_cifar10_res9.sh
 ```
