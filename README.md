@@ -54,7 +54,11 @@ For example, you can also run the following script to reproduce the results of S
 python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 10 --size 11 --epoch 300 --eval_grad 0 --model res_gn --basicLabelRatio 0.4 --experiment_name Cifar10_res_gn_H1_comUE10_R0.4_SSFL
 ```
 
-In the above experiment, the default model is ResNet18. One can use the following command to change the model and perform the comparative experiments of Table 3 in section 4.3 in [the paper](https://arxiv.org/abs/2008.11364).
+In the above experiment, the default model is ResNet18. One can use the following command to change the model:
+```
+python train_parallel.py --GPU_list 01234 --H 1 --num_comm_ue 10  --model res9 --size 11 --epoch 300 --eval_grad 0 --model res_gn --basicLabelRatio 0.4 --experiment_name Cifar10_res_gn_H1_comUE10_R0.4_SSFL
+```
+One also can perform the comparative experiments (use ResNet9 as the default model) of Table 3 in section 4.3 in [the paper](https://arxiv.org/abs/2008.11364).
 ```
 nohup bash run_cifar10_res9.sh
 ```
