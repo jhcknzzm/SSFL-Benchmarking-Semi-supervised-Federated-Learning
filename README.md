@@ -8,7 +8,7 @@ This repository includes all necessary programs to implement Semi-supervised Fed
 @article{SSFL,
   title={Improving Semi-supervised Federated Learning by Reducing the Gradient Diversity of Models},
   author={Zhang, Zhengming and Yang, Yaoqing and Yao, Zhewei and Yan, Yujun and Gonzalez, Joseph E and Ramchandran, Kannan and Mahoney, Michael W},
-  journal={arXiv preprint arXiv:2105.14636},
+  journal={2021 IEEE International Conference on Big Data (Big Data)},
   year={2021}
 }
 ```
