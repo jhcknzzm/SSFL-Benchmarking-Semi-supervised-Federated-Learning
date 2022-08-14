@@ -144,7 +144,7 @@ def get_svhn(root, num_expand_x, num_expand_u,device_ids, server_idxs):
         train_unlabeled_dataset_list.append(train_unlabeled_dataset)
 
     test_dataset = datasets.SVHN(
-        root, split='train', transform=transform_val, download=False)
+        root, split='test', transform=transform_val, download=False)
     logger.info("Dataset: SVHN")
 
 
